@@ -50,6 +50,7 @@ def step_impl(context, text_string):
     element = context.driver.find_element(By.TAG_NAME, 'body')
     assert(text_string not in element.text)
 
+# HIER
 @when('I set the "{element_name}" to "{text_string}"')
 def step_impl(context, element_name, text_string):
     element_id = ID_PREFIX + element_name.lower().replace(' ', '_')
@@ -125,6 +126,7 @@ def step_impl(context, name):
     element = context.driver.find_element_by_id('search_results')
     assert(name not in element.text)
 
+# MESSAGE
 @then('I should see the message "{message}"')
 def step_impl(context, message):
     found = WebDriverWait(context.driver, context.wait_seconds).until(
@@ -141,6 +143,8 @@ def step_impl(context, message):
 # We can then lowercase the name and prefix with pet_ to get the id
 ##################################################################
 
+
+# FIELD NAME
 @then('I should see "{text_string}" in the "{element_name}" field')
 def step_impl(context, text_string, element_name):
     element_id = ID_PREFIX + element_name.lower().replace(' ', '_')
